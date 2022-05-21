@@ -1,0 +1,86 @@
+
+
+header{
+    text-align: center;
+    background: linear-gradient(to right, rgb(67, 137, 218), rgb(11, 63, 122));
+    color: white;
+    padding: 5px;
+    font-size: larger;
+}
+
+#search-container > * {
+    margin: .5rem;
+}
+
+#container{
+    display: flex;
+}
+
+#search-weather{
+    background-color: rgb(98, 173, 216);
+    color: white;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#city-specs{
+    border: solid 1px black;
+    height: 16rem;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+#city-names{
+    border-top: solid 2px rgb(175, 170, 170);
+
+}
+
+#city-names > *{
+    width: 100%;
+    border-radius: 5px;
+    background-color: rgb(175, 170, 170);
+    color: black;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    text-align: center;
+    
+}
+
+#city-names > p:hover{
+    cursor: pointer;
+}
+
+#cityForecast > div {
+    border: solid 1px black;
+    height: 16rem;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    background-color: rgb(24, 24, 63);
+    color:  white;
+    font-size: small;
+}
+
+#cityForecast > div img{
+    height: 2.5rem;
+}
+
+#currenticon{
+    height: 2.5rem;
+}
+
+.green {
+    background-color: green;
+
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.red{
+    background-color: red;
+}
+
+#uvi{
+    padding: 0.5rem;
+}
