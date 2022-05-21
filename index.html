@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+
+    <link rel="stylesheet" href="./Assets/style.css">
+</head>
+<body>
+    <header>Weather Dashboard</header>
+
+    <div id="container">
+        <aside class="col-2">
+            <div id="search-container">
+                <h4>Search for a City:</h4>
+                    <input type="text" placeholder="San Diego" id="city" class="form-control"> <br>
+                    <button id="search-weather" class="btn btn-primary">Search</button>
+                
+            </div>
+            <div id="city-names">
+
+            </div>
+        </aside>
+        <div class="col-10">
+            <div class="d-flex flex-column"  id="city-specs">
+
+                <div class=" d-flex flex-nowrap"><h3 id="name"> </h3> <img id="currenticon"></div>
+                <p id="temp"></p>
+                <p id="wind"></p>
+                <p id="humidity"></p>
+                <div id="uvInd" class=" d-flex"></div>
+            </div>
+            <h6 class="col-9">5-Day Forecast:</h6>
+            <div class="col-12 d-flex flex-nowrap justify-content-between" id="cityForecast">
+
+                <div class="col-2 Forecast1"></div>
+                <div class="col-2 Forecast2"></div>
+                <div class="col-2 Forecast3"></div>
+                <div class="col-2 Forecast4"></div>
+                <div class="col-2 Forecast5"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://moment.github.io/luxon/global/luxon.min.js"></script>
+    <script src="./Assets/script.js"></script>
+</body>
+</html>
