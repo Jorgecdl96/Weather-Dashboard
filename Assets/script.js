@@ -30,12 +30,15 @@ searchBtn.addEventListener('click',function weatherApi() {
 
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city.value}&units=imperial&appid=5249a5b3e7ab32499252bf3e6aa54bd3`)
     .then(res => res.json())
-    .then(data => currentWeather(data))
+    .then(data => {
+        currentWeather(data);
+    })
     .catch(err => {
         console.error(err);
         alert('This city does not exists, please submit a new city.');
     });
-
+    
+    
     cityHistorial();
     
     city.value = '';
@@ -44,6 +47,7 @@ searchBtn.addEventListener('click',function weatherApi() {
 
 // current weather is pulled and printed in html
 function currentWeather (specs) {
+
 
     var lattitude = specs.coord.lat;
     var longitude = specs.coord.lon;
