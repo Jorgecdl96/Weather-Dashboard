@@ -19,12 +19,12 @@ var forecast = [0 , forecast1, forecast2, forecast3, forecast4, forecast5];
 
 var DateTime = luxon.DateTime;
 
-console.log(DateTime.now().toLocaleString());
+//console.log(DateTime.now().toLocaleString());
 
 var dt = DateTime.now().plus({days: 1}).toLocaleString();
 
 
-console.log(dt);
+//console.log(dt);
 
 searchBtn.addEventListener('click',function weatherApi() {
 
@@ -44,7 +44,7 @@ function currentWeather (specs) {
 
     var lattitude = specs.coord.lat;
     var longitude = specs.coord.lon;
-    console.log(specs);
+    //console.log(specs);
 
     currentIcon.setAttribute('src', 'https://openweathermap.org/img/wn/' + specs.weather[0].icon + '@2x.png')
     currentIcon.setAttribute('alt', 'wheater icon');
@@ -70,7 +70,7 @@ function forecastApi(lattitude, longitude){
 //getting forecasted weather
 function forecastWeather(specs){
 
-    console.log(specs);
+    //console.log(specs);
     const {daily} = specs;
 
     //printing UV index on current weather
