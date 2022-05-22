@@ -111,7 +111,7 @@ function cityHistorial (data){
     
     const {main} = data;
     
-    cities.push(city.value.toLowerCase());
+    cities.push(data.name);
     localStorage.setItem('cities',JSON.stringify(cities));
     
     //printing every city searched
