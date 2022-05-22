@@ -38,6 +38,8 @@ searchBtn.addEventListener('click',function weatherApi() {
     city.value = '';
 });
      
+
+// current weather is pulled and printed in html
 function currentWeather (specs) {
 
     var lattitude = specs.coord.lat;
@@ -52,10 +54,11 @@ function currentWeather (specs) {
     humidity.textContent = 'Humidity: ' + specs.main.humidity + ' %';
     ;
 
-
+    //pulling lattitude and longitud city 
     forecastApi(lattitude,longitude);
 }
 
+//getting forecasted weather through latitude and longitude
 function forecastApi(lattitude, longitude){
 
     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lattitude}&lon=${longitude}&exclude=minutely,hourly&units=imperial&appid=5249a5b3e7ab32499252bf3e6aa54bd3`)
@@ -64,20 +67,22 @@ function forecastApi(lattitude, longitude){
     .catch(err => console.error(err));
 }
 
+//getting forecasted weather
 function forecastWeather(specs){
 
     console.log(specs);
     const {daily} = specs;
 
-    
+    //printing UV index on current weather
     uvIndContainer.innerHTML = `<p>UV Index: <i id="uvi"> ${specs.current.uvi}</i></p>`;
 
     var uvIndex = document.getElementById('uvi');
     var uvBgColor = specs.current.uvi;
 
+    //changing color according to UV index parameter
     uvBgColor <= 2 ? uvIndex.setAttribute('class', 'green rounded') : uvBgColor <= 7 ? uvIndex.setAttribute('class', 'yellow rounded') : uvIndex.setAttribute('class', 'red rounded');
 
-
+    //printing the next 5 days of the current day 
     for (let i = 1; i < 6; i++) {
         
         forecast[i].innerHTML = 
@@ -93,17 +98,19 @@ var cities = JSON.parse(localStorage.getItem('cities')) || [];
 let i = 0;
 
 function cityHistorial (){
-
+    
     cities.push(city.value.toLowerCase());
     localStorage.setItem('cities',JSON.stringify(cities));
     
+    //printing every city searched
     for (; i < cities.length; i++) {
         var cityEl = document.createElement('p');
         cityEl.innerHTML = cities[i];
         cityNames.appendChild(cityEl);
         localStorage.clear();
     }
-
+    
+    //show the weather of the city by clicking on <p> element previously created.
     cityEl.addEventListener('click',
     function (e){
         var cityHistory = e.target.textContent;
