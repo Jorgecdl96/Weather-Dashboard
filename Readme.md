@@ -24,4 +24,7 @@ As a user your search history will be storaged in your viewport and you will be 
 
 ## Website Presentation
 
+![weather Dashboard](Assets/Weather%20Dashboard.png)
+
 ## Link to deploy application
+
