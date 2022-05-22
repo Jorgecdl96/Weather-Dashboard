@@ -28,3 +28,5 @@ As a user your search history will be storaged in your viewport and you will be 
 
 ## Link to deploy application
 
+https://jorgecdl96.github.io/Weather-Dashboard/
+
