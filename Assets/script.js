@@ -32,7 +32,7 @@ searchBtn.addEventListener('click',function weatherApi() {
     .then(res => res.json())
     .then(data => {
         currentWeather(data);
-        cityHistorial();
+        cityHistorial(data);
         
         city.value = '';
     })
@@ -105,7 +105,11 @@ function forecastWeather(specs){
 var cities = JSON.parse(localStorage.getItem('cities')) || [];
 let i = 0;
 
-function cityHistorial (){
+function cityHistorial (data){
+
+    console.log(data);
+    
+    const {main} = data;
     
     cities.push(city.value.toLowerCase());
     localStorage.setItem('cities',JSON.stringify(cities));
