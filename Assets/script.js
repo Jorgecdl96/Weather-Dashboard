@@ -32,18 +32,19 @@ searchBtn.addEventListener('click',function weatherApi() {
     .then(res => res.json())
     .then(data => {
         currentWeather(data);
+        cityHistorial();
+        
+        city.value = '';
     })
     .catch(err => {
         console.error(err);
+        city.value = '';
         alert('This city does not exists, please submit a new city.');
     });
     
     
-    cityHistorial();
-    
-    city.value = '';
 });
-     
+
 
 // current weather is pulled and printed in html
 function currentWeather (specs) {
